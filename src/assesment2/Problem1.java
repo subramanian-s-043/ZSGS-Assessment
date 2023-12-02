@@ -30,8 +30,9 @@ public class Problem1 {
 				}
 			}
 		}
-		System.out.println(max);
-		System.out.println(start+1);
-		System.out.println(end+1);
+		for(int i=start+1;i<=end;i++)
+		{
+			System.out.print(input[i]+",");
+		}
 	}
 }
