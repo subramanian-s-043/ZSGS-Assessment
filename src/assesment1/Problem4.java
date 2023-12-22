@@ -11,23 +11,24 @@ public class Problem4 {
 		System.out.println("Number of rows:");
 		int rowLength=sc.nextInt();
 		char[][] pattern=new char[rowLength][input.length()];
+		for (char[] row: pattern)
+		    Arrays.fill(row, ' ');
 		fillPattern(pattern,input,rowLength);
 		for(int i=0;i<rowLength;i++)
 		{
 			for(int j=0;j<input.length();j++)
 			{
-				System.out.print(pattern[i][j]+" ");
+					System.out.print(pattern[i][j]+" ");
 			}
-			System.out.println("");
+			System.out.println(" ");
 		}
 	}
 	private static void fillPattern(char[][] pattern, String inputString, int numRows) {
 	    int diffCount=0;
-	    int charIndex=0;
 	    int stringIndex=0;
 	    for (int col=0;col<inputString.length();col++)
 	    {
-	        for (int row=0;row<numRows;row++) 
+	        for (int row=0;row<numRows;row++)
 	        {
 	            if (col==0||col%(numRows - 1)==0)
 	            {
@@ -39,7 +40,7 @@ public class Problem4 {
 	                }
 	                diffCount = 0;
 	            } else {
-	                if ((numRows) - diffCount - 1 == row) {
+	                if ((numRows - 1) - diffCount == row) {
 	                    pattern[row][col]=inputString.charAt(stringIndex);
 	                    stringIndex++;
 	                    if (stringIndex>=inputString.length()) {

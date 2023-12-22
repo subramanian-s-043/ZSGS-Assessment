@@ -6,11 +6,11 @@ public class Problem5 {
 	Scanner sc=new Scanner(System.in);
 	System.out.println("Enter the number of Strings to be Entered:");
 	int n=sc.nextInt();
+	sc.nextLine();
 	String[] inp=new String[n];
 	for(int i=0;i<n;i++)
 	{
 		System.out.println("Enter the String"+(i+1));
-		sc.nextLine();
 		inp[i]=sc.nextLine();
 	}
 	for(int i=0;i<n;i++)

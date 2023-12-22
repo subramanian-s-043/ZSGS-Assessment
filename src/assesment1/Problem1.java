@@ -6,30 +6,29 @@ public class Problem1 {
 	Scanner sc=new Scanner(System.in);
 	int n=sc.nextInt();
 	int[][] pattern= new int[n][n];
-	int row=n-1,initial=0,initialCol=0,lastCol=n-1,start=1;
-	while(initial<row && initialCol<lastCol)
-	{
-		for(int i=0;i<=row;i++)
-		{
-			pattern[i][initialCol+i]=start++;
-		}
-		
-		initialCol++;
-		row--;
-		for(int i=row;i>=initial;i--)
-		{
-			pattern[i][lastCol]=start++;
-		}
-		
-		lastCol--;
-		for(int i=lastCol;i>initialCol;i--)
-		{
-			pattern[initial][i]=start++;
-		}
-		
-		initial++;
-		row--;
-	}
+	int rows=n-1,initialRow=0,initialCol=0,lastCol=n-1,numb=1;
+	 while(initialRow<=rows || initialCol<=lastCol)
+	 {
+	 	for(int i=initialRow;i<=rows;i++)
+	 	{
+	 		pattern[i][initialRow+i]=numb++;
+	 		
+	 	}
+	 	rows--;
+	 	for(int i=rows;i>=initialRow;i--)
+	 	{
+	 		pattern[i][lastCol]=numb++;
+	 	}
+	 	lastCol--;
+	 	initialCol++;
+	 	for(int i=lastCol;i>=initialCol;i--)
+	 	{
+	 		pattern[initialRow][i]=numb++;
+	 	}
+	 	initialCol++;
+	 	rows--;
+	 	initialRow++;
+	 }
 	for(int[] temp : pattern) 
 	{
     	for(int i : temp)
@@ -49,3 +48,150 @@ public class Problem1 {
       }
 }
 }
+
+
+/*
+ * Logic
+ * while(initialRow<=rows || initialCol<=lastCol)
+{
+	for(int i=initialRow;i<=rows;i++)
+	{
+		pattern[i][initialRow+i]=numb++;
+		
+	}
+	rows--;
+	for(int i=rows;i>=initialRow;i--)
+	{
+		pattern[i][lastCol]=numb++;
+	}
+	lastCol--;
+	initialCol++;
+	for(int i=lastCol;i>=initialCol;i--)
+	{
+		pattern[initialRow][i]=numb++;
+	}
+	initialCol++;
+	rows--;
+	initialRow++;
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Rough Implementation
+//while(initial<=row || initialCol<lastCol)
+//{
+//	for(int i=initial;i<=row;i++)
+//	{
+//		if(start<=(((n*n)+n)/2))
+//		{
+//			pattern[i][initialCol+i]=start++;
+//		}
+//	}
+////	initialCol++;
+//	if(initial==0)
+//	{
+//		initialCol++;
+//	}else {
+//		initialCol+=initialCol;
+//	}	
+//	row--;
+//	for(int i=row;i>=initial;i--)
+//	{
+//		if(start<=(((n*n)+n)/2))
+//		{
+//			pattern[i][lastCol]=start++;
+//		}
+//	}
+////	if(initial==0)
+////	{
+////		lastCol--;
+////	}else {
+////		lastCol-=2;
+////	}
+//	lastCol--;
+//	for(int i=lastCol;i>=initialCol;i--)
+//	{
+//		if(start<=(((n*n)+n)/2))
+//		{
+//			pattern[initial][i]=start++;
+//		}
+//	}
+////	initial++;
+//	if(initial==0)
+//	{
+//		initial++;
+//	}else {
+//		initial+=initial;
+//	}
+//	row--;
+//}
+//
+//while(initial<=row || initialCol<=lastCol)
+//{
+//	for(int i=initial;i<=row;i++)
+//	{
+//		if(start<=(((n*n)+n)/2))
+//		{
+//				pattern[i][initialCol+i]=start++;
+//		}
+//	}
+//	initialCol++;
+//	row--;
+//	for(int i=row;i>=initial;i--)
+//	{
+//		if(start<=(((n*n)+n)/2))
+//		{
+//			pattern[i][lastCol]=start++;
+//		}
+//	}
+//	if(initial!=0)
+//	{
+//		initialCol++;
+//	}
+//	lastCol--;
+//	for(int i=lastCol;i>=initialCol;i--)
+//	{
+//		if(start<=(((n*n)+n)/2))
+//		{
+//			pattern[initial][i]=start++;
+//		}
+//	}
+//	if(initial!=0)
+//	{
+//		initialCol++;
+//	}
+//	initial++;
+////	initialCol++;
+//	row--;
+//} 
